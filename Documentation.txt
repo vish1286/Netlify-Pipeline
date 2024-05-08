@@ -1,0 +1,43 @@
+This officially contains all the explicit concepts that I am going to learn in React.
+
+Main Concept: Props
+Property 1: Named Export and Default Export:-
+Usually when you create .JS files and try to export variables from one .js to another .js file, usually it doesn't work and replace the .js file with .mjs file. While default export, The syntax is:
+const a = 23
+const b = 12
+const c = 1
+const d = 10
+
+export default b;
+export {a};
+export {c};
+In another .js file, Assume i want to import this:
+
+import jds, {a,c} from './module1.mjs'
+console.log(jds)//Prints the default export even when the name of the variable is different
+console.log(a)
+console.log(c)// Here, it is named export and the use of the same variable name and {} is mandatory
+
+Property 2: Components
+Components are nothing but entire div's but they can be used n times by just calling them like a self closing tag
+Props: To use props(Which are variables in Components, pass props as a parameter in the function and for the respective variables, use props.title for eg.)
+Syntax : {props.title}
+
+Prop-Types: Import it first and then follow the syntax:-
+Navbar.propTypes = {
+    title : PropTypes.string,
+    p1: PropTypes.string
+}
+
+For Default Props, Use the following Syntax:
+Navbar.defaultProps = {
+    title: "Neeraj Mayur",
+    p1: "Home"
+}
+
+
+Concept 2: Hooks and States
+1. {usestate}:
+Syntax :- Import it from 'react'
+const[present, future] from useState('');
+Initially present will be set to '' and to change this you cannot use present like a variable, instead call future like a function future('This is actually changed now')
